@@ -1,0 +1,98 @@
+/* Kontener przycisków MeTube */
+.metube-buttons-container {
+  display: flex;
+  gap: 8px;
+  margin-right: 8px;
+  align-items: center;
+}
+
+/* Styl przycisków */
+.metube-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.metube-btn svg {
+  flex-shrink: 0;
+}
+
+/* Przycisk MP3 - pomarańczowy */
+.metube-btn-mp3 {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+}
+
+.metube-btn-mp3:hover {
+  background: linear-gradient(135deg, #ff5722 0%, #e68a00 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+/* Przycisk MP4 - niebieski */
+.metube-btn-mp4 {
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  color: white;
+}
+
+.metube-btn-mp4:hover {
+  background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
+
+/* Efekt kliknięcia */
+.metube-btn:active {
+  transform: scale(0.95);
+}
+
+/* Powiadomienie */
+.metube-notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 999999;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.metube-notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.metube-notification-success {
+  background: linear-gradient(135deg, #4caf50 0%, #43a047 100%);
+  color: white;
+}
+
+.metube-notification-error {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .metube-btn-mp3 {
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+  }
+
+  .metube-btn-mp4 {
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+  }
+}
