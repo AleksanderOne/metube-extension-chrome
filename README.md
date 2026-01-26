@@ -18,7 +18,7 @@ Rozszerzenie Chrome do pobierania filmów i muzyki z YouTube bezpośrednio do se
 
 1. Pobierz lub sklonuj to repozytorium:
    ```bash
-   git clone https://github.com/AleksanderOne/metube-extension.git
+   git clone https://github.com/AleksanderOne/metube-extension-chrome.git
    ```
 
 2. Otwórz Chrome i przejdź do `chrome://extensions/`
@@ -27,7 +27,7 @@ Rozszerzenie Chrome do pobierania filmów i muzyki z YouTube bezpośrednio do se
 
 4. Kliknij **Załaduj rozpakowane**
 
-5. Wybierz folder z rozszerzeniem (`metube-extension`)
+5. Wybierz folder z rozszerzeniem (`metube-extension-chrome`)
 
 6. Rozszerzenie pojawi się na pasku narzędzi
 
@@ -47,8 +47,9 @@ Rozszerzenie Chrome do pobierania filmów i muzyki z YouTube bezpośrednio do se
 ## Struktura projektu
 
 ```
-metube-extension/
-├── manifest.json      # Konfiguracja rozszerzenia
+metube-extension-chrome/
+├── manifest.json      # Konfiguracja rozszerzenia (Manifest V3)
+├── background.js      # Service worker do obsługi żądań HTTP
 ├── popup.html         # Interfejs ustawień
 ├── popup.js           # Logika popup
 ├── content.js         # Skrypt wstrzykiwany na YouTube
