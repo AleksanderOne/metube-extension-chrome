@@ -1,6 +1,12 @@
 # MeTube Downloader
 
-Rozszerzenie Chrome do pobierania filmów i muzyki z YouTube bezpośrednio do serwera [MeTube](https://github.com/alexta69/metube).
+> Rozszerzenie Chrome do pobierania filmów i muzyki z YouTube bezpośrednio do serwera MeTube
+
+[![Chrome](https://img.shields.io/badge/Chrome-Extension-green?logo=googlechrome)](https://github.com/AleksanderOne/metube-extension-chrome)
+[![Manifest](https://img.shields.io/badge/Manifest-V3-blue)](https://developer.chrome.com/docs/extensions/mv3/)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+
+Szybko dodawaj filmy z YouTube do kolejki pobierania na serwerze [MeTube](https://github.com/alexta69/metube). Przyciski MP3/MP4 pojawiają się bezpośrednio pod filmem.
 
 ## Funkcje
 
