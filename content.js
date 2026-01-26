@@ -27,30 +27,20 @@ function getCurrentVideoUrl() {
   return null;
 }
 
-// Funkcja wysyłająca URL do MeTube
+// Funkcja wysyłająca URL do MeTube (przez service worker, omija Mixed Content)
 async function sendToMeTube(url, format) {
-  const endpoint = `${metubeServer}/add`;
-
-  const payload = {
-    url: url,
-    quality: format === 'mp3' ? 'best' : 'best',
-    format: format // 'mp3' lub 'mp4'
-  };
-
   try {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload)
+    const response = await chrome.runtime.sendMessage({
+      action: 'sendToMeTube',
+      serverUrl: metubeServer,
+      videoUrl: url,
+      format: format
     });
 
-    if (response.ok) {
+    if (response.success) {
       showNotification(`Dodano do MeTube (${format.toUpperCase()})`, 'success');
     } else {
-      const error = await response.text();
-      showNotification(`Błąd: ${error}`, 'error');
+      showNotification(`Błąd: ${response.error}`, 'error');
     }
   } catch (error) {
     showNotification(`Błąd połączenia z MeTube: ${error.message}`, 'error');
